@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="stylesform.css"> <!-- Link to your CSS -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <!-- <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#book-form">Book a Trip</a></li>
+        </ul>
+    </nav> -->
+    <section class="hero1">
+        <!-- Form Section -->
+    <div id="book-form">
+        <h1>Book Your Trip</h1>
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="from">From Destination:</label>
+            <input type="text" id="from" name="from" required>
+
+            <label for="to">To Destination:</label>
+            <input type="text" id="to" name="to" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </section>
+
+    
+    <script>window.onload = function() {
+        // Retrieve stored destinations
+        let fromDestination = localStorage.getItem("fromDestination");
+        let toDestination = localStorage.getItem("toDestination");
+    
+        // Populate form inputs if values exist
+        if (fromDestination) {
+            document.getElementById("from").value = fromDestination;
+        }
+        if (toDestination) {
+            document.getElementById("to").value = toDestination;
+        }
+    };</script>
+
+    <script src="scriptform.js"></script> <!-- Link to your JavaScript -->
+</body>
+</html>

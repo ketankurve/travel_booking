@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #032418;  /* Forest Green */
+    --secondary-color: #000000; /* Black */
+    --accent-color: #FFD700;  /* Gold */
+    --text-light: #EAEAEA;
+    --text-dark: #1A1A1A;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    background: black;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-image: url('1.jpg');
+    background-image: url('2.jpg');
+    background-image: url('3.jpg');
+    background-image: url('4.jpg');
+    
+    /* Background Slideshow Animation */
+    background-size: cover; /* Ensures image covers the full screen */
+    background-position: center;
+    animation: backgroundSlideshow 20s infinite ease-in-out;
+}
+
+/* Dark Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay */
+    z-index: 1;
+}
+
+/* Background Image Slideshow Animation */
+@keyframes backgroundSlideshow {
+    0% { background-image: url('1.jpg'); }
+    25% { background-image: url('2.jpg'); }
+    50% { background-image: url('3.jpg'); }
+    75% { background-image: url('4.jpg'); }
+    100% { background-image: url('1.jpg'); }
+}
+
+
+
+.hero h1, 
+.hero p, 
+.hero .btn {
+    position: relative;
+    z-index: 2; /* Ensures text is above overlay */
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-family: var(--font-heading);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #ffcc00;
+    color: var(--secondary-color);
+}
+
+.btn1 {
+    display: block;  /* Ensures the button takes a full-width line */
+    width: fit-content;  /* Prevents full width */
+    margin: 40px auto;  /* Centers the button */
+    padding: 12px 24px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.btn1:hover {
+    background: #ffcc00;
+    color: var(--secondary-color);
+}
+
+
+/* Booking Section */
+.booking {
+    background: var(--secondary-color);
+    padding: 60px 30px;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.booking h2 {
+    font-size: 36px;
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    margin-top: 50px
+}
+
+form {
+    display: flex;
+    justify-content: center; /* Center the form */
+    gap: 30px; /* Add space between the inputs */
+    width: 60%; /* You can adjust this width based on your design */
+    margin: auto;
+    margin-top: 40px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: relative;
+    margin: 20px;
+}
+
+#from-destination, #to-destination {
+    cursor: text; /* I-beam cursor */
+}
+
+
+.circle {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.swap-btn {
+    background: var(--primary-color);
+    color: #FFD700;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 40px;
+}
+
+/* Ensure the input group is positioned relative */
+.input-group {
+    position: relative;
+    z-index: 10;
+}
+
+/* Submit Button */
+.find-btn {
+    width: 100%;
+    background: var(--accent-color);
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* .find-btn:hover {
+    background: #08452f;
+} */
+
+/* Dropdown List */
+.dropdown-list {
+    position: absolute;
+    top: 50px;  /* Move it below the input field */
+    left: 30px;
+    width: calc(100% - 30px);
+    background: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+/* Ensure dropdown items are clickable and visible */
+.dropdown-list li {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    background: #fff;
+}
+
+.dropdown-list li:hover {
+    background: #ddd;
+}
+
+/* Ensure the From field dropdown appears above the To field */
+#from-destination:focus + .dropdown-list {
+    z-index: 1010;
+}
+
+#to-destination:focus + .dropdown-list {
+    z-index: 1005;
+}
+
+.india-destinations {
+    padding: 60px 30px;
+    text-align: center;
+    background: var(--secondary-color);
+}
+
+.india-destinations h2 {
+    font-size: 36px;
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.india-destinations .destination-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.india-destinations .destination {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    width: 250px;
+    text-align: center;
+}
+
+.india-destinations .destination img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+}
+
+.india-destinations .destination h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    color: var(--accent-color);
+}
+
+.india-destinations .destination p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+.india-destinations .destination:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact.contact {
+    color: #EAEAEA; /* Light Text */
+    padding: 5px 5px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: #FFD700; /* Gold */
+}
+
+#contact p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000; /* Black */
+    color: #EAEAEA; /* Light Text */
+    text-align: center;
+    padding: 15px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Hover Effect on Footer */
+footer p:hover {
+    color: #FFD700; /* Gold */
+    cursor: pointer;
+}

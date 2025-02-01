@@ -1,0 +1,241 @@
+/* stylesform.css */
+:root {
+    --primary-color: #032418;  /* Forest Green */
+    --secondary-color: #000000; /* Black */
+    --accent-color: #FFD700;  /* Gold */
+    --text-light: #EAEAEA;
+    --text-dark: #1A1A1A;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--text-light); /* Light text color as background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero1 {
+    width: 100%;
+    height: 100vh; /* Full height of the screen */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('1.jpg');
+    background-image: url('2.jpg');
+    background-image: url('3.jpg');
+    background-image: url('4.jpg');
+    
+    /* Background Slideshow Animation */
+    background-size: cover; /* Ensures image covers the full screen */
+    background-position: center;
+    animation: backgroundSlideshow 20s infinite ease-in-out;
+}
+
+/* .hero1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+} */
+
+/* Background Image Slideshow Animation */
+@keyframes backgroundSlideshow {
+    0% { background-image: url('1.jpg'); }
+    25% { background-image: url('2.jpg'); }
+    50% { background-image: url('3.jpg'); }
+    75% { background-image: url('4.jpg'); }
+    100% { background-image: url('1.jpg'); }
+}
+
+
+/* nav {
+    background-color: var(--primary-color);
+    padding: 2px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+} */
+
+/* Form Section */
+#book-form {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#book-form h1 {
+    text-align: center;
+    color: var(--primary-color); /* Forest Green */
+    font-size: 25px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+#book-form label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--primary-color); /* Forest Green */
+}
+
+#book-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#book-form button {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#book-form button:hover {
+    background: #ffcc00;
+    color: var(--secondary-color);
+}
+
+/* Dark overlay to cover the screen */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 999; /* Ensure it's on top */
+    animation: fadeInOverlay 0.5s forwards; /* Fade in the dark overlay */
+}
+
+/* Fade-in overlay animation */
+@keyframes fadeInOverlay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Success message and icon wrapper */
+.success-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: popIn 0.5s forwards; /* Pop-in effect */
+    padding: 15px;
+    background-color: #e6ffe6;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Pop-in animation */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Fade-out animation for both message and overlay */
+/* .fade-out {
+    animation: fadeOut 1s forwards;
+} */
+
+/* Fade-out keyframes */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Checkmark Icon Styling */
+.checkmark-icon {
+    width: 30px;
+    height: 30px;
+    border: 3px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.checkmark-icon::before {
+    content: '✓'; /* Checkmark symbol */
+    font-size: 20px;
+    color: green;
+}
+
+/* Success Message Styling */
+.success-message-wrapper p {
+    margin: 0;
+    font-size: 16px;
+    color: green;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+/* Go to Home message styling */
+.go-home-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #FFD700;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.go-home-message:hover {
+    color: #32CD32; /* Change color on hover */
+}
+

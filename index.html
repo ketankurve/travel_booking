@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">JP Travels</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#india-destinations">Explore</a></li>
+                <li><a href="#book">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <h1>Explore India with JP Travels</h1>
+        <p>Find your perfect getaway and book effortlessly.</p>
+        <a href="#book" class="btn">Book Now</a>
+
+        
+    </section>
+
+    <section id="india-destinations" class="india-destinations">
+        <h2>Explore India</h2>
+        <div class="destination-list">
+            <div class="destination">
+                <img src="agra.jpg" alt="Taj Mahal">
+                <h3>Agra</h3>
+                <p>Home to the iconic Taj Mahal, a wonder of the world.</p>
+            </div>
+            <div class="destination">
+                <img src="goa.jpg" alt="Goa">
+                <h3>Goa</h3>
+                <p>Beautiful beaches, nightlife, and Portuguese heritage.</p>
+            </div>
+            <div class="destination">
+                <img src="manali.jpg" alt="Manali">
+                <h3>Manali</h3>
+                <p>A paradise for adventure lovers with snow-capped mountains.</p>
+            </div>
+            <div class="destination">
+                <img src="kerala.jpg" alt="Kerala">
+                <h3>Kerala</h3>
+                <p>Known for backwaters, houseboats, and Ayurvedic retreats.</p>
+            </div>
+            <div class="destination">
+                <img src="jaipur.jpg" alt="Jaipur">
+                <h3>Jaipur</h3>
+                <p>The Pink City, famous for its palaces and royal heritage.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="book" class="booking">
+        <h2>Book Your Trip</h2>
+        <form>
+            <!-- From Destination -->
+            <div class="input-group">
+                <div class="circle"></div>
+                <input type="text" id="from-destination" placeholder="From Destination" oninput="filterOptions(this, 'from-list')">
+                <ul class="dropdown-list" id="from-list"></ul>
+                <button type="button" class="swap-btn" onclick="swapDestinations()">⇄</button>
+            </div>
+    
+            <!-- To Destination -->
+            <div class="input-group">
+                <div class="circle"></div>
+                <input type="text" id="to-destination" placeholder="To Destination" oninput="filterOptions(this, 'to-list')">
+                <ul class="dropdown-list" id="to-list"></ul>
+            </div>
+        </form>
+    
+        <!-- Book Now Button (Now on a new line) -->
+        <div class="btn-container">
+            <a href="form.html" class="btn1" onclick="saveDestinations()">Book Now</a>
+        </div>
+        
+    </section>
+    
+    
+    
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@jptravels.com | Phone: +123 456 789</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 JPTravels. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
