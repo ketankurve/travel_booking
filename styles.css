@@ -79,10 +79,10 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-image: url('1.jpg');
-    background-image: url('2.jpg');
-    background-image: url('3.jpg');
-    background-image: url('4.jpg');
+    background-image: url('images/1.jpg');
+    background-image: url('images/2.jpg');
+    background-image: url('images/3.jpg');
+    background-image: url('images/4.jpg');
     
     /* Background Slideshow Animation */
     background-size: cover; /* Ensures image covers the full screen */
@@ -104,11 +104,11 @@ nav ul li a:hover {
 
 /* Background Image Slideshow Animation */
 @keyframes backgroundSlideshow {
-    0% { background-image: url('1.jpg'); }
-    25% { background-image: url('2.jpg'); }
-    50% { background-image: url('3.jpg'); }
-    75% { background-image: url('4.jpg'); }
-    100% { background-image: url('1.jpg'); }
+    0% { background-image: url('images/1.jpg'); }
+    25% { background-image: url('images/2.jpg'); }
+    50% { background-image: url('images/3.jpg'); }
+    75% { background-image: url('images/4.jpg'); }
+    100% { background-image: url('images/1.jpg'); }
 }
 
 
